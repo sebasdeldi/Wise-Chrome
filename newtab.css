@@ -36,7 +36,7 @@ body {
 }
 
 .clock {
-    width: 300px;
+    width: 340px;
     padding: 30px;
     margin-left: 25px;
     background-color: black;
@@ -128,7 +128,6 @@ body {
 #main { left: 0%; }
 #main { margin-top: 5%; }
 .wrap { -webkit-transition-duration: 0.2s; }
-#options_button { opacity: 0; }
 
 
 #main {
@@ -238,9 +237,15 @@ body {
 .dragstart {
 	opacity: 0.5;
 }
-#options, #options_button {
+#options, #options_button, #todo_button {
 	position: absolute;
 	top: 0;
+	right: 0;
+}
+
+#todo_button {
+	position: absolute;
+	top: 60px;
 	right: 0;
 }
 #options {
@@ -297,15 +302,12 @@ body {
 #options .section.current {
 	display: block;
 }
-#options_button {
-	background: transparent no-repeat center center;
+#options_button, #todo_button {
+	margin: 10px;
 	width: 32px;
 	height: 32px;
-	opacity: 0.6;
 }
-#options_button:hover {
-	opacity: 1;
-}
+
 #options_close_button {
 	color: #000;
 	text-align: center;
@@ -424,5 +426,5 @@ input[type="file"]::-webkit-file-upload-button {
 	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABR0lEQVQ4y2P4//8/AyWYYfAaoKOjo2tkZHQWiC8A2RYkGQDUwOzg4HDW19f3DQgD2deAYuxEG2Bubp7k4+Pz5tSpU2tAGGSItbV1PlEG6Onp8Xh6et4LDg5+DeSrgHBISMhroNgjfX19AYIG2NvbN4I0hIWFvYKJgdihoaGvgF7pxGuAgYGBjJeX1/OEhIQXERERcANAbJCYt7f3S6AaOZwGODs7zwsPD3+Vnp7+LDIy8pWVlZUlEFuA2CAxkEEuLi4LsRoAjC59UMAlJia+yMzMfBYXF/cC6O+3IAxig8RAckBXvAGpxTDAzc1tV1RU1EuQTTDFQPGZIAwzFCQHUgNUux3DAH9//5cpKSnPQQpBOCYm5iVMDsSGiYPUANW+wDCgpqbmPNAGFAOA/n0HwsgGpKWlPa+rqzuLLRDTYE4mAqdQLTMBAOCTliDnI7ksAAAAAElFTkSuQmCC);
 }
 #options_button {
-	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAA6UlEQVQoz2P4z4AfMhCpQFvccKfpS+Mzeim4TODbPiHpnv8bp/dGlbisUP7elPIk+qXrS31+DAVaKVrcQJol9UHa85DXwZYYCpwuWdwzarRdHPUi41n0y+16GApmrgp47fsm6HXii8xnMS9de7QZ0d1gs2Rv5qOU55lPM58lvvB+azpFkxndkc7/e58u+jltxtG053EvvN6az9dixQwogf8sf8O6T6U9jweaYrFSiwNbSDL+TG6+kA5U4vvGYj32oGb6kld3Jf1Z/IvAR7jigvVVRcWNnAebV+KOLM6f1f97/uvji00mGAsAehYJT6WSCbkAAAAASUVORK5CYII=);
+	background-image: url(resources/options.png);
 }
