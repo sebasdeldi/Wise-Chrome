@@ -1,5 +1,13 @@
 'use strict';
 
+//loads the rightbar menu
+
+$(document).ready(function(){
+    $('[data-slidepanel]').slidepanel({
+        orientation: 'right',
+        mode: 'push'
+    });
+});
 
 // sets a different background for the tab, randomly
 function setBackGround(){
