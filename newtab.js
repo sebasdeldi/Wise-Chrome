@@ -1,13 +1,64 @@
 'use strict';
 
-//loads the rightbar menu
+/* Set the width of the side navigation to 250px */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "370px";
+}
 
-$(document).ready(function(){
-    $('[data-slidepanel]').slidepanel({
-        orientation: 'right',
-        mode: 'push'
-    });
-});
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+
+$( '#todo_button' ).on( "click", openNav );
+$( ".closebtn" ).on( "click", closeNav );
+
+
+(function(){
+
+	var todo = document.getElementById('todolist');
+	var form = document.getElementById('custom-form');
+	var field = document.getElementById('newitem');
+
+    
+  	form.addEventListener( 'submit', function( ev ) {
+  	  todo.innerHTML += '<li>' + field.value + '</li>';
+  	  field.value = '';
+  	  field.focus();
+  	  storestate();
+  	  ev.preventDefault();
+  	}, false);
+  
+
+
+  todo.addEventListener( 'click', function( ev ) {
+    var t = ev.target;
+    if ( t.tagName === 'LI' ) {
+      if ( t.classList.contains( 'done' ) ) {
+        t.parentNode.removeChild( t );
+      } else {  
+        t.classList.add( 'done' );
+      }
+      storestate();
+    };
+    ev.preventDefault();
+  }, false);
+
+  document.addEventListener( 'DOMContentLoaded', retrievestate, false );
+  
+  function storestate() {
+    localStorage.todolist = todo.innerHTML;
+  };
+
+  function retrievestate() {
+    if ( localStorage.todolist ) {
+      todo.innerHTML = localStorage.todolist;
+    }
+  };
+
+})();
+
+
 
 // sets a different background for the tab, randomly
 function setBackGround(){

@@ -4,15 +4,30 @@
 <meta charset="utf-8" />
 <title>New Tab</title>
 <link rel="stylesheet" href="newtab.css">
-<link rel="stylesheet" type="text/css" href="jquery.slidepanel.css">
+<link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
 </head>
 <body>
 <div id="main">
 </div>
 
+<div id="mySidenav" class="sidenav">
+  <a class="closebtn" >&times;</a>
+  <ul id="todolist"></ul>
+  <center>
+  	<form action="#" method="post" class="custom-form" id="custom-form">
+  	  <div>
+  	    <input type="text" name="newitem" id="newitem" 
+  	           placeholder="new item" required>
+  	    <input type="submit" value="Add" id="submit-btn">
+  	  </div>
+  	</form>
+  </center>
+
+</div>
+
 
 <a id="options_button" href="#options" title="Options"></a>
-<a id="todo_button" href="todo.html" data-slidepanel="panel"><img src="resources/todo.png"></a>
+<a id="todo_button"><img src="resources/todo.png"></a>
 
 <div id="options">
 	<a id="options_close_button" href="#" title="Close">&times;</a>
@@ -150,7 +165,6 @@
 
 
 <script src="jquery-2.0.0.min.js"></script>
-<script type="text/javascript" src="jquery.slidepanel.js"></script>
 <script src="newtab.js"></script>
 
 </body>
