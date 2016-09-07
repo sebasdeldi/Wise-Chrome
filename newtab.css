@@ -76,6 +76,7 @@
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    box-shadow: 0 0 93.955px #0080ff;
 }
 
 /* The navigation menu links */
@@ -136,7 +137,7 @@ body {
 }
 
 .clock {
-    width: 340px;
+    width: 360px;
     padding: 30px;
     margin-left: 25px;
     background-color: black;
@@ -146,6 +147,7 @@ body {
     margin-bottom: 60px;
     z-index: -1;
     color: #bfdfff;
+    box-shadow: 0 0 93.955px #0080ff;
 }
 
 #Date {
@@ -293,6 +295,7 @@ body {
 	background-color: black;
 	border-radius: 5px;
 	margin: 25px;
+	box-shadow: 0 0 93.955px #0080ff;
 }
 #main .empty {
 	opacity: 0.5;
@@ -336,7 +339,7 @@ body {
 .dragstart {
 	opacity: 0.5;
 }
-#options, #options_button, #todo_button {
+#options, #options_button {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -346,7 +349,16 @@ body {
 	position: absolute;
 	top: 60px;
 	right: 0;
+	cursor: pointer;
 }
+
+#download_button{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	margin: 25px;
+}
+
 #options {
 	display: none;
 	font-size: 1.4em;
@@ -402,7 +414,7 @@ body {
 	display: block;
 }
 #options_button, #todo_button {
-	margin: 10px;
+	margin: 25px;
 	width: 32px;
 	height: 32px;
 }

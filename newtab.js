@@ -1,5 +1,8 @@
 'use strict';
 
+
+//LEFT SLIDER SCRIPT HERE
+
 /* Set the width of the side navigation to 250px */
 function openNav() {
     document.getElementById("mySidenav").style.width = "370px";
@@ -13,7 +16,7 @@ function closeNav() {
 $( '#todo_button' ).on( "click", openNav );
 $( ".closebtn" ).on( "click", closeNav );
 
-
+//TODO LIST SCRIPT HERE
 (function(){
 
 	var todo = document.getElementById('todolist');
@@ -59,38 +62,41 @@ $( ".closebtn" ).on( "click", closeNav );
 })();
 
 
-
 // sets a different background for the tab, randomly
-function setBackGround(){
-	var index = 0;
-	var backgroundUrls = [
-		"placeholder",
-		"https://images3.alphacoders.com/595/595064.jpg",
-		"https://images3.alphacoders.com/468/4685.jpg",
-	 	"https://images4.alphacoders.com/249/24974.jpg",
-	 	"https://images6.alphacoders.com/330/330563.jpg",
-	 	"https://images3.alphacoders.com/823/82317.jpg", 
-	 	"https://images2.alphacoders.com/518/518211.jpg",
-	 	"https://images2.alphacoders.com/868/86862.jpg", 
-	 	"https://images5.alphacoders.com/330/330145.jpg",
-	 	"https://images3.alphacoders.com/635/63547.jpg", 
-	 	"https://images.alphacoders.com/544/544201.jpg",
-	 	"https://images3.alphacoders.com/853/85305.jpg",
-	 	"https://images3.alphacoders.com/671/6719.jpg",
-	 	"https://images4.alphacoders.com/876/87656.jpg",
-	 	"https://images3.alphacoders.com/162/162085.jpg",
-	 	"https://images3.alphacoders.com/162/162197.jpg",
-	 	"https://images.alphacoders.com/143/143073.jpg",
-	 	"https://images3.alphacoders.com/120/120727.jpg",
-	 	"https://images.alphacoders.com/154/154833.jpg",
-	 	"https://images5.alphacoders.com/686/686000.jpg",
-	 	"https://images4.alphacoders.com/165/165864.jpg",
-	 	"https://images3.alphacoders.com/595/595127.jpg"
-	];
+var index = 0;
+index = Math.floor((Math.random() * 21) + 1);
+var backgroundUrls = [
+	"placeholder",
+	"https://images3.alphacoders.com/595/595064.jpg",
+	"https://images3.alphacoders.com/468/4685.jpg",
+ 	"https://images4.alphacoders.com/249/24974.jpg",
+ 	"https://images6.alphacoders.com/330/330563.jpg",
+ 	"https://images3.alphacoders.com/823/82317.jpg", 
+ 	"https://images2.alphacoders.com/518/518211.jpg",
+ 	"https://images2.alphacoders.com/868/86862.jpg", 
+ 	"https://images5.alphacoders.com/330/330145.jpg",
+ 	"https://images3.alphacoders.com/635/63547.jpg", 
+ 	"https://images.alphacoders.com/544/544201.jpg",
+ 	"https://images3.alphacoders.com/853/85305.jpg",
+ 	"https://images3.alphacoders.com/671/6719.jpg",
+ 	"https://images4.alphacoders.com/876/87656.jpg",
+ 	"https://images3.alphacoders.com/162/162085.jpg",
+ 	"https://images3.alphacoders.com/162/162197.jpg",
+ 	"https://images.alphacoders.com/143/143073.jpg",
+ 	"https://images3.alphacoders.com/120/120727.jpg",
+ 	"https://images.alphacoders.com/154/154833.jpg",
+ 	"https://images5.alphacoders.com/686/686000.jpg",
+ 	"https://images4.alphacoders.com/165/165864.jpg",
+ 	"https://images3.alphacoders.com/595/595127.jpg"
+];
 
-	index = Math.floor((Math.random() * 21) + 1);
+function setBackGround(){
 	document.body.style.background = "url('"+ backgroundUrls[index] +"') no-repeat center center";
 }
+
+//background downloader
+$('body').append('<a id="download_button" href="'+ backgroundUrls[index] +'" download id="download-img"><img src="resources/download.png"></a>');
+
 
 // render a single bookmark node
 function render(node, target) {
