@@ -1,4 +1,25 @@
 'use strict';
+//READ FILE FOR HISTORICAL DATA SCRIPT
+var fileDisplayArea = document.getElementById('fileDisplayArea');
+function readTextFile(file)
+{
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+                var eventsArray = allText.split('°');
+                console.log(eventsArray);
+                //fileDisplayArea.innerText = allText 
+            }
+        }
+    }
+    rawFile.send(null);
+}
 
 
 //LEFT SLIDER SCRIPT HERE
@@ -16,7 +37,6 @@ function closeNav() {
 $( '#todo_button' ).on( "click", openNav );
 $( ".closebtn" ).on( "click", closeNav );
 
-//TODO LIST SCRIPT HERE
 (function(){
 
 	var todo = document.getElementById('todolist');
@@ -1983,6 +2003,11 @@ var newDate = new Date();
 newDate.setDate(newDate.getDate());
 // Output the day, date, month and year   
 $('#Date').html(dayNames[newDate.getDay()] + " " + newDate.getDate() + ' ' + monthNames[newDate.getMonth()] + ' ' + newDate.getFullYear());
+//to check what historical data retrieve
+var historicalDate = newDate.getDate() + ' ' + monthNames[newDate.getMonth()];
+//SET CORRESPONDING HISTORICAL DATA HERE
+readTextFile("Data/"+historicalDate);
+
 
 setInterval( function() {
 	// Create a newDate() object and extract the seconds of the current time on the visitor's
