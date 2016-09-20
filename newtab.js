@@ -11,10 +11,37 @@ function readTextFile(file)
         {
             if(rawFile.status === 200 || rawFile.status == 0)
             {
+
                 var allText = rawFile.responseText;
                 var eventsArray = allText.split('°');
-                console.log(eventsArray);
-                //fileDisplayArea.innerText = allText 
+                var node;
+                var textnode;
+                //console.log(eventsArray);
+                var randNums = []
+                var createAnchor;
+
+                while(randNums.length < 10){
+                	var randomnumber=Math.ceil(Math.random()*eventsArray.length);
+                	var found=false;
+                	for(var i=0;i<randNums.length;i++){
+                		if(randNums[i]==randomnumber){found=true;break}
+                	}
+                	if(!found)randNums[randNums.length]=randomnumber;
+                }
+                console.log(randNums);
+                for (var i = 0; i <= randNums.length-2; i++) {
+                	node = document.createElement("LI");
+                	node.className= 'eventItem';             
+                	textnode = document.createTextNode(eventsArray[randNums[i]]);         
+                	node.appendChild(textnode);                              
+                	document.getElementById("eventsList").appendChild(node);
+                	createAnchor = document.createElement('a');
+                	createAnchor.setAttribute('href', "https://www.google.com.co/?gfe_rd=cr&ei=K7rhV82MNoqIqQXt-ZnIDg#q="+textnode.textContent);
+                	createAnchor.appendChild(textnode);
+                	node.appendChild(createAnchor);
+                	document.getElementById("eventsList").appendChild(node);
+
+                }
             }
         }
     }
@@ -111,7 +138,7 @@ var backgroundUrls = [
 ];
 
 function setBackGround(){
-	document.body.style.background = "url('"+ backgroundUrls[index] +"') no-repeat center center";
+	document.body.style.background = "url('"+ backgroundUrls[index] +"') no-repeat fixed center center / cover";
 }
 
 //background downloader
@@ -234,15 +261,17 @@ function renderColumn(index, target) {
 	}
 }
 
-// render all columns to main div
+// render all columns  and historic events place to main div
 function renderColumns() {
 	// clear main div
 	var target = document.getElementById('main');
+
 	while (target.hasChildNodes())
 		target.removeChild(target.lastChild);
 
 	// render columns
 	for (var i = 0; i < columns.length; i++) {
+
 		var column = document.createElement('div');
 		column.className = 'column';
 		//column.style.width = (1 / columns.length) * 100 + '%';
@@ -1505,7 +1534,7 @@ var config = {
 	auto_close: 0,
 	auto_scale: 1,
 	css: '',
-	number_top: 20,
+	number_top: 10,
 	number_closed: 10,
 	number_recent: 10
 };

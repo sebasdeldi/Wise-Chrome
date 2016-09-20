@@ -1,3 +1,52 @@
+/* Historic Events Styles*/
+#fileDisplayArea{
+	background-color: black;
+	width: 50%;
+	height: 81%;
+	box-shadow: 0 0 93.955px #0080ff;
+	border-radius: 5px;
+	position: absolute;
+	top: 0;
+	margin-top: 5%;
+	right: 10%;
+	padding: 20px;
+}
+
+@media screen and (max-width: 1140px) {
+  #fileDisplayArea{
+  	display: none;
+  }
+}
+
+.eventItem {
+	color: #bfdfff;
+	text-shadow: 0 0 5px #00c6ff;
+	font-size: 1.6em;
+	margin-bottom: 20px;
+}
+
+.eventItem a{
+	border-radius: 1.5em;
+	-webkit-transition-duration: 0s;
+	color: #bfdfff;
+	text-shadow: 0 0 5px #00c6ff;
+	margin-bottom: 20px;
+	text-decoration: none;
+}
+
+.eventItem a:hover { 
+	color: #80ecff;
+	box-shadow: 0 0 93.955px #0080ff;
+}
+
+#eventTitle{
+	color: #bfdfff;
+	text-shadow: 0 0 5px #00c6ff;
+	margin-bottom: 35px;
+	font-size: 2.5em;
+	margin-left: 25px;
+}
+
 /*todo list styles*/
 
 #submit-btn{
@@ -106,7 +155,6 @@
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
     transition: margin-right .5s;
-    padding: 20px;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
@@ -225,14 +273,12 @@ body {
 #main a { border-radius: 1.5em; }
 #main a { -webkit-transition-duration: 0s; }
 #main a { line-height: 2.1944000000000004; padding-left: 0.8648000000000001em; padding-right: 0.8648000000000001em; }
-#main { width: 80%; }
-#main { left: 0%; }
 #main { margin-top: 5%; font-family: 'Prompt', sans-serif;}
 .wrap { -webkit-transition-duration: 0.2s; }
 
 
 #main {
-	width: 80%;
+	width: 40%;
 	position: relative;
 	max-width: 100%;
 	white-space: nowrap;
@@ -294,7 +340,7 @@ body {
 	padding: 10px 0 20px 0;
 	background-color: black;
 	border-radius: 5px;
-	margin: 25px;
+	margin: 0 25px 25px 25px;
 	box-shadow: 0 0 93.955px #0080ff;
 }
 #main .empty {
