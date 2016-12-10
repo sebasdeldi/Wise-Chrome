@@ -12,7 +12,8 @@
 	"permissions": [
 		"tabs",
 		"sessions",
-		"http://*/"
+		"http://*/",
+		"bookmarks"
 	],
 	"chrome_url_overrides":
 	{
